@@ -14,7 +14,7 @@ export default function SignOutButton() {
       dispatch(unauthenticateUser())
       localStorage.removeItem('isAuth')
       toast.success(response.message)
-      return navigate('/')
+      return navigate('/login')
     }
     toast.error(response.message)
   }
