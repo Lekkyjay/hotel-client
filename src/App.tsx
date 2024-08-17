@@ -4,6 +4,7 @@ import Layout from './components/Layout'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import AddHotel from './pages/AddHotel'
+import MyHotels from './pages/MyHotels'
 
 function App() {
   const auth = useAppSelector((state) => state.auth)
@@ -21,7 +22,7 @@ function App() {
             <Route path="/hotel/:hotelId/booking" element={<Layout><Login /></Layout>} />
             <Route path="/add-hotel" element={<Layout><AddHotel /></Layout>} />
             <Route path="/edit-hotel/:hotelId" element={<Layout><Login /></Layout>} />
-            <Route path="/my-hotels" element={<Layout><AddHotel /></Layout>} />
+            <Route path="/my-hotels" element={<Layout><MyHotels /></Layout>} />
             <Route path="/my-bookings" element={<Layout><Login /></Layout>} />
           </>
         )}

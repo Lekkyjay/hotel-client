@@ -44,8 +44,8 @@ const logout = async () => {
 
 const addMyHotel = async (hotelFormData: FormData) => {
   const response = await fetch(`${API_BASE_URL}/api/myhotel`, {
-    method: "POST",
-    credentials: "include",
+    method: 'POST',
+    credentials: 'include',
     body: hotelFormData,
   })
 
@@ -56,5 +56,17 @@ const addMyHotel = async (hotelFormData: FormData) => {
   return response.json()
 }
 
+const fetchMyHotels = async () => {
+  const response = await fetch(`${API_BASE_URL}/api/myhotel`, {
+    method: 'GET',
+    credentials: 'include'
+  })
 
-export { registerUser, loginUser, validateToken, logout, addMyHotel }
+  if (!response.ok) {
+    throw new Error('Failed to fetch my hotels')
+  }
+
+  return response.json()
+}
+
+export { registerUser, loginUser, validateToken, logout, addMyHotel, fetchMyHotels }

@@ -31,3 +31,27 @@ interface HotelType {
   lastUpdated: Date
   bookings: BookingType[]
 }
+
+interface IHotel {
+  id: string
+  userId: string
+  name: string
+  city: string
+  country: string
+  description: string
+  type: string
+  adultcount: number
+  childcount: number
+  facilities: string[]
+  price_pernight: number
+  star_rating: number
+  image_urls: string[]
+  lastupdated: Date
+}
+
+
+interface IMyHotel {
+  message: string
+  data: IHotel[]
+  success: boolean
+}
